@@ -3,10 +3,12 @@
 FROM eclipse-temurin:21-jdk-alpine
 
 # Create and change to the app directory.
-WORKDIR /app
+WORKDIR /mypetdirectory
 
 # Copy local code to the container image.
 COPY . ./
+RUN chmod +x ./mvnw
+
 
 # Build the app.
 RUN ./mvnw -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
