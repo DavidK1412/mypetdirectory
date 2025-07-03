@@ -10,3 +10,8 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   server:
     port: ${SERVER_PORT}
+
+security:
+  jwt:
+    secret: hola_mundo
+    expiration: 3600000 # 1 hora en ms
